@@ -19,12 +19,12 @@ function get(url) {
 }
 
 export const user = {
-    getQrCode:  () => {
-        return '/api/login/code'
+    getQrCode: () => {
+        return '/api/login/code?t=' + new Date().getTime()
     },
-    getLoginState:  () => get('/login'),
-    getQrState:  () => get('/login/state'),
-    getUser:  () => get('/user'),
+    getLoginState: () => get('/login'),
+    getQrState: () => get('/login/state'),
+    getUser: () => get('/user'),
 }
 
 export const study = {
@@ -33,21 +33,21 @@ export const study = {
             name, pass: md5(pass)
         })
     },
-    getSubjectList:  () => get('/subject'),
-    selectSubject:  id => get('/subject/select?id='+id),
-    getCourse:  id => get('/course?id='+id),
-    getWorkState:  () => get('/work'),
-    startWork:  () => get('/work/start'),
-    stopWork:  () => get('/work/stop'),
-    recoveryWork:  () => get('/work/recovery'),
-    workScreen:  () => {
-        return '/api/work/screen'
+    getSubjectList: () => get('/subject'),
+    selectSubject: id => get('/subject/select?id=' + id),
+    getCourse: id => get('/course?id=' + id),
+    getWorkState: () => get('/work'),
+    startWork: () => get('/work/start'),
+    stopWork: () => get('/work/stop'),
+    recoveryWork: () => get('/work/recovery'),
+    workScreen: () => {
+        return '/api/work/screen?t=' + new Date().getTime()
     },
 }
 
 export const setting = {
-    getPush:  () => get('/push'),
-    savePush: (enable,path) => {
-        return post('/user/login', {enable,path})
+    getPush: () => get('/push'),
+    savePush: (enable, path) => {
+        return post('/user/login', { enable, path })
     },
 }
