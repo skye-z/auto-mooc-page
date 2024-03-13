@@ -87,7 +87,8 @@ export default {
           this.state = 9
           this.screen = study.workScreen()
         } else this.checkLogin()
-      }).catch(() => {
+      }).catch(err => {
+        console.log('任务状态接口请求失败',err)
         window.$message.error('任务状态接口请求失败')
       })
     },
@@ -108,7 +109,8 @@ export default {
         } else {
           this.state = 2
         }
-      }).catch(() => {
+      }).catch(err => {
+        console.log('登陆校验接口请求失败',err)
         window.$message.error('登陆校验接口请求失败')
       })
     },
@@ -144,7 +146,8 @@ export default {
             }
           }
         } else window.$message.error('检查扫码状态失败')
-      }).catch(() => {
+      }).catch(err => {
+        console.log('二维码校验接口请求失败',err)
         window.$message.error('二维码校验接口请求失败')
       })
     },
@@ -152,7 +155,8 @@ export default {
       user.getUser().then(res => {
         if (res.state) this.user = res.message
         else window.$message.warning('获取用户信息失败')
-      }).catch(() => {
+      }).catch(err => {
+        console.log('用户信息接口请求失败',err)
         window.$message.error('用户信息接口请求失败')
       })
     },
@@ -168,7 +172,8 @@ export default {
           this.subject = res.data
           this.select = res.message
         } else window.$message.warning('获取科目列表失败')
-      }).catch(() => {
+      }).catch(err => {
+        console.log('科目列表接口请求失败',err)
         window.$message.error('科目列表接口请求失败')
       })
     },
@@ -208,7 +213,8 @@ export default {
             }, 2000);
           })
         } else window.$message.warning('科目选择失败')
-      }).catch(() => {
+      }).catch(err => {
+        console.log('选科接口请求失败',err)
         window.$message.error('选科接口请求失败')
       })
     },
@@ -254,7 +260,8 @@ export default {
               window.$message.success('已重新注入脚本')
               this.reScreen()
             } else window.$message.warning('恢复任务失败')
-          }).catch(() => {
+          }).catch(err => {
+        console.log('恢复任务接口请求失败',err)
             window.$message.error('恢复任务接口请求失败')
           })
         }
