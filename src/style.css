@@ -14,3 +14,10 @@
   box-sizing: border-box;
   --n-color-start: #fff !important;
 }
+
+.card {
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+}

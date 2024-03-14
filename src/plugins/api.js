@@ -48,6 +48,6 @@ export const study = {
 export const setting = {
     getPush: () => get('/push'),
     savePush: (enable, path) => {
-        return post('/user/login', { enable, path })
+        return post('/push', { enable, path })
     },
 }

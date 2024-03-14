@@ -9,13 +9,7 @@
     </n-dialog-provider>
   </n-loading-bar-provider>
   <div class="box">
-    <div class="header">
-      <img class="logo" src="./assets/logo.png" />
-      <div class="title-box">
-        <div class="title">Auto Mooc</div>
-        <div>自动化慕课工具 v2.0</div>
-      </div>
-    </div>
+    <header-bar />
     <div class="card">
       <div v-if="state == -1" class="loading">
         <n-spin size="medium" />
@@ -64,12 +58,13 @@
 
 <script>
 import GlobalApi from './components/globalApi.vue'
+import HeaderBar from './components/headerBar.vue'
 import FootBar from './components/footBar.vue'
 import { user, study } from './plugins/api'
 
 export default {
   name: "App",
-  components: { GlobalApi, FootBar },
+  components: { GlobalApi, HeaderBar, FootBar },
   data: () => ({
     timer: 0,
     state: -1,
@@ -281,43 +276,14 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .box {
   width: 600px;
   margin: 0 auto;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10vh 0 20px 0;
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 20px;
-}
-
-.title-box {
-  margin-left: 10px;
-}
-
-.title {
-  font-size: 32px;
-  line-height: 32px;
-  font-weight: bold;
-}
-
 .card {
-  backdrop-filter: saturate(180%) blur(20px);
-  background-color: #fff;
   margin-bottom: 10px;
-  border-radius: 8px;
-  width: 100%;
 }
 
 .loading {
