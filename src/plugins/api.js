@@ -22,9 +22,9 @@ export const user = {
     getQrCode: () => {
         return '/api/login/code?t=' + new Date().getTime()
     },
-    getLoginState: () => get('/login'),
-    getQrState: () => get('/login/state'),
-    getUser: () => get('/user'),
+    getLoginState: () => get('/login?t=' + new Date().getTime()),
+    getQrState: () => get('/login/state?t=' + new Date().getTime()),
+    getUser: () => get('/user?t=' + new Date().getTime()),
 }
 
 export const study = {
