@@ -162,6 +162,7 @@ export default {
             let item = res.data[i]
             if (item.name.indexOf('（') != -1) item.name = item.name.substring(0, item.name.indexOf('（'));
             if (item.name.indexOf('(') != -1) item.name = item.name.substring(0, item.name.indexOf('('));
+            item.cover = cover.replace('http://','https://')
             item.name = item.name.trim();
           }
           this.subject = res.data
