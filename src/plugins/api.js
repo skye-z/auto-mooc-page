@@ -22,7 +22,7 @@ function get(url) {
 
 export const user = {
     getQrCode: () => {
-        return import.meta.env.VITE_APP_API+'/api/login/code?t=' + new Date().getTime()
+        return import.meta.env.VITE_APP_API+'/login/code?t=' + new Date().getTime()
     },
     getLoginState: () => get('/login?t=' + new Date().getTime()),
     getQrState: () => get('/login/state?t=' + new Date().getTime()),
@@ -43,7 +43,7 @@ export const study = {
     stopWork: () => get('/work/stop'),
     recoveryWork: () => get('/work/recovery'),
     workScreen: () => {
-        return import.meta.env.VITE_APP_API+'/api/work/screen?t=' + new Date().getTime()
+        return import.meta.env.VITE_APP_API+'/work/screen?t=' + new Date().getTime()
     },
 }
 
