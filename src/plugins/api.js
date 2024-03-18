@@ -12,8 +12,10 @@ function post(url, data) {
 }
 
 function get(url) {
+    if (url.indexOf('?') != -1) url += '&'
+    else url+='?'
     return request({
-        url: url,
+        url: url + 't=' + new Date().getTime(),
         method: 'GET'
     })
 }
